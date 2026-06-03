@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-manrope), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
+  
+  --color-os-blue: #007aff;
+  --color-os-red: #ff5f56;
+  --color-os-yellow: #ffbd2e;
+  --color-os-green: #27c93f;
+  
+  --color-glass-bg-dark: rgba(18, 18, 18, 0.75);
+  --color-glass-bg-light: rgba(245, 245, 247, 0.75);
+  --color-glass-border-dark: rgba(255, 255, 255, 0.08);
+  --color-glass-border-light: rgba(0, 0, 0, 0.08);
+}
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --color-bg-mesh-aurora-landscape: url('/images/aurora-wallpaper.jpg');
+  --color-bg-mesh-beach-waves: url('/images/beach-wallpaper.jpg');
+  --color-bg-mesh-mountain-lake: url('/images/lake-wallpaper.jpg');
+  --color-bg-mesh-liquid-glass-bg: url('https://images.unsplash.com/photo-1432251407527-504a6b4174a2?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  
+  --color-glass-liquid: rgba(255, 255, 255, 0.25);
+  --color-glass-liquid-border: rgba(255, 255, 255, 0.4);
+}
+
+.theme-dark {
+  --color-glass-liquid: rgba(18, 18, 18, 0.35);
+  --color-glass-liquid-border: rgba(255, 255, 255, 0.12);
+}
+
+body {
+  overflow: hidden;
+  user-select: none;
+  background-color: #000;
+  font-family: var(--font-sans);
+}
+
+/* Glassmorphism utility classes */
+.glass-panel-dark {
+  background: rgba(22, 22, 23, 0.65);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+/* Wallpapers */
+.bg-mesh-liquid-glass-bg {
+  background-image: url('https://images.unsplash.com/photo-1432251407527-504a6b4174a2?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.bg-mesh-aurora-landscape {
+  background-image: url('/images/aurora-wallpaper.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.bg-mesh-beach-waves {
+  background-image: url('/images/beach-wallpaper.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.bg-mesh-mountain-lake {
+  background-image: url('/images/lake-wallpaper.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.bg-mesh-sonoma {
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(251, 146, 60, 0.45) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(244, 63, 94, 0.45) 0%, transparent 55%),
+    radial-gradient(circle at 40% 80%, rgba(139, 92, 246, 0.35) 0%, transparent 60%),
+    radial-gradient(circle at 90% 80%, rgba(253, 224, 71, 0.3) 0%, transparent 50%),
+    linear-gradient(135deg, #0f0729 0%, #1e0933 40%, #3b0764 80%, #581c87 100%);
+}
+
+.bg-mesh-dark {
+  background: radial-gradient(circle at 20% 30%, #2e1065 0%, transparent 60%),
+              radial-gradient(circle at 80% 70%, #0369a1 0%, transparent 60%),
+              linear-gradient(180deg, #09090b 0%, #020617 100%);
+}
+
+.bg-mesh-aurora {
+  background: radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+              radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+              linear-gradient(135deg, #030712 0%, #0b0f19 100%);
+}
+
+.bg-mesh-light {
+  background: radial-gradient(circle at 20% 20%, #eff6ff 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, #fdf2f8 0%, transparent 50%),
+              radial-gradient(circle at 50% 10%, #faf5ff 0%, transparent 50%),
+              linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  color: #1f2937;
+}
+
+.bg-solid-dark {
+  background-color: #0d0d0d;
+}
+
+.bg-solid-light {
+  background-color: #f3f4f6;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.theme-light ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.theme-light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Custom typing cursor */
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background: #39ff14;
+  margin-left: 4px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Rain matrix effect overlay */
+.matrix-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.15;
+  z-index: 5;
+}
+
+@keyframes moveBackground {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 0% -1000%;
+  }
+}
