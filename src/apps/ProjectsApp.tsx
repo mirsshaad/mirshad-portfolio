@@ -9,6 +9,7 @@ interface ProjectDetails {
   title: string;
   category: string;
   image: string;
+  images?: string[];
   tech: string[];
   overview: string;
   problem: string;
@@ -25,7 +26,8 @@ const PROJECTS_DATA: ProjectDetails[] = [
     id: "multi-cloud",
     title: "Multi-Cloud Infrastructure Automation Platform",
     category: "Cloud / DevOps",
-    image: "/images/project-multi-cloud.png",
+    image: "/images/project-multi-cloud-grafana.png",
+    images: ["/images/project-multi-cloud-grafana.png", "/images/project-multi-cloud-actions.png"],
     tech: ["AWS EKS", "Azure AKS", "Terraform", "Docker", "Kubernetes", "GitHub Actions", "Prometheus", "Grafana", "Python Flask"],
     overview: "A production-grade multi-cloud platform that deploys a containerised application simultaneously on AWS and Azure, with full CI/CD automation and real-time observability across both clusters.",
     problem: "Single-cloud architectures are a single point of failure — one provider outage means complete downtime. Manual deployments are slow, error-prone, and impossible to audit or replicate consistently across environments.",
@@ -170,15 +172,30 @@ export default function ProjectsApp() {
           </div>
         </div>
 
-        {/* Project Image */}
-        <div className="relative w-full h-[220px] rounded-xl overflow-hidden border border-white/5 bg-zinc-900 shadow-inner">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover"
-          />
-        </div>
+        {/* Project Image(s) */}
+        {project.images && project.images.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {project.images.map((img, index) => (
+              <div key={index} className="relative w-full h-[220px] rounded-xl overflow-hidden border border-white/5 bg-zinc-900 shadow-inner">
+                <Image
+                  src={img}
+                  alt={`${project.title} screenshot ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="relative w-full h-[220px] rounded-xl overflow-hidden border border-white/5 bg-zinc-900 shadow-inner">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover"
+            />
+          </div>
+        )}
 
         {/* Tech Stack Pills */}
         <div className="flex flex-wrap gap-1.5">
