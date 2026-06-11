@@ -323,3 +323,34 @@ export const MacAICommandCenterIcon = () => (
     <circle cx="32" cy="32" r="10" stroke="#a855f7" strokeWidth="0.8" strokeDasharray="3 2" opacity="0.5" />
   </svg>
 );
+
+// Multi-Cloud Infrastructure Automation (AWS + Azure Clouds + K8s wheel)
+export const MacMultiCloudIcon = () => (
+  <svg viewBox="0 0 64 64" className="w-full h-full p-0.5 drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="multiCloudBg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#111827" />
+        <stop offset="100%" stopColor="#1F2937" />
+      </linearGradient>
+    </defs>
+    <rect width="64" height="64" rx="14" fill="url(#multiCloudBg)" />
+    {/* AWS Cloud (Orange/Amber) */}
+    <path d="M22 28C22 23.58 25.58 20 30 20C30.93 20 31.82 20.16 32.65 20.45C33.91 17.78 36.63 16 39.8 16C44.33 16 48 19.67 48 24.2C48 24.5 47.98 24.8 47.95 25.1C50.28 25.96 52 28.23 52 30.9C52 34.21 49.31 36.9 46 36.9H30C25.58 36.9 22 33.32 22 28Z" fill="#FF9900" opacity="0.65" />
+    {/* Azure Cloud (Cyan/Blue) */}
+    <path d="M12 38C12 33.58 15.58 30 20 30C20.93 30 21.82 30.16 22.65 30.45C23.91 27.78 26.63 26 29.8 26C34.33 26 38 29.67 38 34.2C38 34.5 37.98 34.8 37.95 35.1C40.28 35.96 42 38.23 42 40.9C42 44.21 39.31 46.9 36 46.9H20C15.58 46.9 12 43.32 12 38Z" fill="#0078D4" opacity="0.85" />
+    {/* Connection Linkages / Pipelines */}
+    <path d="M22 38C26 35 32 35 38 28" stroke="#FFFFFF" strokeWidth="1.5" strokeDasharray="2 2" opacity="0.7" />
+    {/* Kubernetes Wheel Logo in the Center */}
+    <g transform="translate(32, 33) scale(0.6)">
+      <circle cx="0" cy="0" r="12" fill="#326CE5" stroke="#FFFFFF" strokeWidth="2" />
+      {/* spokes */}
+      <line x1="0" y1="0" x2="0" y2="-12" stroke="#FFFFFF" strokeWidth="2" />
+      <line x1="0" y1="0" x2="10.4" y2="-6" stroke="#FFFFFF" strokeWidth="2" />
+      <line x1="0" y1="0" x2="10.4" y2="6" stroke="#FFFFFF" strokeWidth="2" />
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#FFFFFF" strokeWidth="2" />
+      <line x1="0" y1="0" x2="-10.4" y2="6" stroke="#FFFFFF" strokeWidth="2" />
+      <line x1="0" y1="0" x2="-10.4" y2="-6" stroke="#FFFFFF" strokeWidth="2" />
+    </g>
+  </svg>
+);
+

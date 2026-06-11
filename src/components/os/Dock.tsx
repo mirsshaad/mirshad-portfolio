@@ -18,7 +18,8 @@ import {
   MacResumeIcon, 
   MacSafariIcon, 
   MacGameCenterIcon, 
-  MacSettingsIcon 
+  MacSettingsIcon,
+  MacMultiCloudIcon
 } from "./MacIcons";
 
 interface DockItem {
@@ -34,6 +35,7 @@ const DOCK_ITEMS: DockItem[] = [
   { appId: "trading-bot", title: "AI Trading Bot", icon: MacTradingBotIcon },
   { appId: "aws-solutions", title: "AWS Deploys", icon: MacAwsSolutionsIcon },
   { appId: "azure-solutions", title: "Azure Deploys", icon: MacAzureSolutionsIcon },
+  { appId: "multi-cloud-app", title: "Multi-Cloud Controller", icon: MacMultiCloudIcon },
   { appId: "terminal", title: "Interactive Terminal", icon: MacTerminalIcon },
   { appId: "analytics", title: "OS Analytics", icon: MacAnalyticsIcon },
   { appId: "football", title: "Football Journey", icon: MacFootballIcon },

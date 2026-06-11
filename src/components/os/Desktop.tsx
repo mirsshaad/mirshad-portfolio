@@ -32,7 +32,8 @@ import {
   MacSafariIcon, 
   MacGameCenterIcon, 
   MacSettingsIcon,
-  MacAICommandCenterIcon
+  MacAICommandCenterIcon,
+  MacMultiCloudIcon
 } from "./MacIcons";
 
 // Lazy loaded App Views
@@ -51,6 +52,7 @@ import ContactApp from "@/apps/ContactApp";
 import GameCenterApp from "@/apps/GameCenterApp";
 import SettingsApp from "@/apps/SettingsApp";
 import AICommandCenterApp from "@/apps/AICommandCenterApp";
+import MultiCloudApp from "@/apps/MultiCloudApp";
 
 interface DesktopIconConfig {
   appId: string;
@@ -65,6 +67,7 @@ const DESKTOP_ICONS: DesktopIconConfig[] = [
   { appId: "trading-bot", title: "AI Trading Bot", icon: MacTradingBotIcon },
   { appId: "aws-solutions", title: "AWS Deploys", icon: MacAwsSolutionsIcon },
   { appId: "azure-solutions", title: "Azure Deploys", icon: MacAzureSolutionsIcon },
+  { appId: "multi-cloud-app", title: "Multi-Cloud", icon: MacMultiCloudIcon },
   { appId: "analytics", title: "Analytics", icon: MacAnalyticsIcon },
   { appId: "football", title: "Football Journey", icon: MacFootballIcon },
   { appId: "gallery", title: "Gallery", icon: MacGalleryIcon },
@@ -115,6 +118,8 @@ export default function Desktop() {
         return <AwsSolutionsApp />;
       case "azure-solutions":
         return <AzureSolutionsApp />;
+      case "multi-cloud-app":
+        return <MultiCloudApp />;
       case "terminal":
         return <TerminalApp />;
       case "analytics":
