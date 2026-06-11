@@ -16,13 +16,17 @@ import {
   Layers,
   ArrowRight,
   TrendingUp,
-  RotateCw
+  RotateCw,
+  FileText,
+  AlertCircle,
+  ShieldCheck,
+  Check
 } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 
 export default function MultiCloudApp() {
   const [pipelineState, setPipelineState] = useState<"idle" | "building" | "publishing" | "deploying" | "success">("idle");
-  const [activeTab, setActiveTab] = useState<"dashboard" | "pipeline" | "architecture">("dashboard");
+  const [activeTab, setActiveTab] = useState<"casestudy" | "dashboard" | "pipeline" | "architecture">("casestudy");
   const [liveCpuEks, setLiveCpuEks] = useState(8.31);
   const [liveCpuAks, setLiveCpuAks] = useState(6.25);
   const [liveMemoryEks, setLiveMemoryEks] = useState(29.8);
@@ -67,6 +71,7 @@ export default function MultiCloudApp() {
         {/* Tab Selection */}
         <div className="flex bg-zinc-950 border border-white/5 p-0.5 rounded-lg text-[10px] font-bold">
           {([
+            { id: "casestudy", label: "Case Study" },
             { id: "dashboard", label: "Grafana Metrics" },
             { id: "pipeline", label: "CI/CD Pipeline" },
             { id: "architecture", label: "Terraform IaC" },
@@ -87,6 +92,121 @@ export default function MultiCloudApp() {
       {/* Main Content Area */}
       <div className="flex-1 overflow-y-auto p-6 flex flex-col gap-6">
         
+        {/* TAB 0: CASE STUDY */}
+        {activeTab === "casestudy" && (
+          <div className="flex flex-col gap-6 select-text">
+            {/* Header info */}
+            <div className="border-b border-white/5 pb-4">
+              <h1 className="text-lg font-bold text-white leading-tight">Multi-Cloud Infrastructure Automation Platform</h1>
+              <p className="text-xs text-zinc-500 mt-1">
+                Case Study by <span className="text-sky-400 font-semibold">Mirshad VP</span> — Cloud Infrastructure Engineer
+              </p>
+            </div>
+
+            {/* Problem & Solution */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div className="bg-zinc-950/40 border border-white/5 p-4 rounded-xl flex flex-col gap-2">
+                <h3 className="text-xs font-bold text-red-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <AlertCircle size={13} /> The Problem
+                </h3>
+                <p className="text-xs text-zinc-400 leading-relaxed text-justify">
+                  Companies running on a single cloud provider face a critical risk — one outage means complete downtime, lost revenue, and damaged reputation. Manual infrastructure management makes scaling slow, error-prone, and impossible to replicate consistently across environments.
+                </p>
+              </div>
+
+              <div className="bg-zinc-950/40 border border-white/5 p-4 rounded-xl flex flex-col gap-2">
+                <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <ShieldCheck size={13} /> The Solution
+                </h3>
+                <p className="text-xs text-zinc-400 leading-relaxed text-justify">
+                  Built a production-grade multi-cloud infrastructure platform that runs simultaneously on AWS and Azure, with full automation from code to deployment. If one cloud goes down, the other handles traffic. Every infrastructure change is version-controlled, reproducible, and automatically deployed.
+                </p>
+              </div>
+            </div>
+
+            {/* Architecture Details */}
+            <div className="flex flex-col gap-3.5">
+              <h3 className="text-xs font-bold text-zinc-200 uppercase tracking-wider flex items-center gap-1.5">
+                <Layers size={13} className="text-sky-400" /> Architecture Details
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                {[
+                  {
+                    title: "Infrastructure as Code",
+                    desc: "Terraform provisions both AWS EKS and Azure AKS clusters from a single codebase, with remote state stored in Azure Blob Storage.",
+                    icon: Database
+                  },
+                  {
+                    title: "Containerization",
+                    desc: "Application packaged as a Docker image, versioned and stored on Docker Hub.",
+                    icon: Cpu
+                  },
+                  {
+                    title: "Multi-Cloud Kubernetes",
+                    desc: "App deployed on both clusters simultaneously, each with a public load-balanced endpoint.",
+                    icon: Network
+                  },
+                  {
+                    title: "CI/CD Pipeline",
+                    desc: "GitHub Actions automatically builds, tags, and deploys to both clouds on every code push — zero manual steps.",
+                    icon: RotateCw
+                  },
+                  {
+                    title: "Monitoring & Observability",
+                    desc: "Prometheus collects real-time metrics from both clusters, visualized in Grafana dashboards showing CPU, memory, and workload health.",
+                    icon: Activity
+                  }
+                ].map((item, idx) => (
+                  <div key={idx} className="bg-zinc-950/20 border border-white/5 p-3 rounded-xl flex items-start gap-3">
+                    <div className="w-7 h-7 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                      <item.icon size={14} className="text-sky-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-zinc-200 leading-tight">{item.title}</h4>
+                      <p className="text-[11px] text-zinc-500 mt-1 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Project Results */}
+            <div className="flex flex-col gap-3">
+              <h3 className="text-xs font-bold text-zinc-200 uppercase tracking-wider flex items-center gap-1.5">
+                <TrendingUp size={13} className="text-sky-400" /> Project Results
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                {[
+                  "99.9% availability through multi-cloud redundancy",
+                  "Zero-touch deployments — code push to production in under 60 seconds",
+                  "Full infrastructure reproducible in minutes via Terraform",
+                  "Real-time visibility across both clouds from a single Grafana dashboard"
+                ].map((res, i) => (
+                  <div key={i} className="flex items-center gap-2.5 bg-zinc-950/30 border border-white/5 px-3 py-2 rounded-xl">
+                    <Check size={14} className="text-emerald-400 shrink-0" />
+                    <span className="text-zinc-300 font-medium">{res}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Tech Stack Pills */}
+            <div className="flex flex-col gap-2 border-t border-white/5 pt-4">
+              <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">Tech Stack</span>
+              <div className="flex flex-wrap gap-1.5">
+                {["AWS EKS", "Azure AKS", "Terraform", "Docker", "Kubernetes", "GitHub Actions", "Prometheus", "Grafana", "Python Flask"].map((t, i) => (
+                  <span
+                    key={i}
+                    className="text-[9px] font-semibold bg-white/5 text-zinc-300 px-2.5 py-1 rounded border border-white/5 uppercase font-mono"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* TAB 1: GRAFANA METRICS */}
         {activeTab === "dashboard" && (
           <div className="flex flex-col gap-6">
