@@ -31,7 +31,8 @@ import {
   MacResumeIcon, 
   MacSafariIcon, 
   MacGameCenterIcon, 
-  MacSettingsIcon 
+  MacSettingsIcon,
+  MacAICommandCenterIcon
 } from "./MacIcons";
 
 // Lazy loaded App Views
@@ -49,6 +50,7 @@ import ResumeApp from "@/apps/ResumeApp";
 import ContactApp from "@/apps/ContactApp";
 import GameCenterApp from "@/apps/GameCenterApp";
 import SettingsApp from "@/apps/SettingsApp";
+import AICommandCenterApp from "@/apps/AICommandCenterApp";
 
 interface DesktopIconConfig {
   appId: string;
@@ -71,6 +73,7 @@ const DESKTOP_ICONS: DesktopIconConfig[] = [
   { appId: "terminal", title: "Terminal", icon: MacTerminalIcon },
   { appId: "game", title: "Game Center", icon: MacGameCenterIcon },
   { appId: "settings", title: "Settings", icon: MacSettingsIcon },
+  { appId: "ai-command-center", title: "AI Command Center", icon: MacAICommandCenterIcon },
 ];
 
 export default function Desktop() {
@@ -128,6 +131,8 @@ export default function Desktop() {
         return <GameCenterApp />;
       case "settings":
         return <SettingsApp />;
+      case "ai-command-center":
+        return <AICommandCenterApp />;
       default:
         return <div className="p-4 text-center">App failed to load.</div>;
     }

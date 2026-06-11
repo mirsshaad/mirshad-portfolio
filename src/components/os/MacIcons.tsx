@@ -290,3 +290,36 @@ export const MacAwsSolutionsIcon = () => (
   </svg>
 );
 
+// AI Command Center (Neural Network / Cyberpunk)
+export const MacAICommandCenterIcon = () => (
+  <svg viewBox="0 0 64 64" className="w-full h-full p-0.5 drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="aiCmdBg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#0d0d1a" />
+        <stop offset="100%" stopColor="#1a0a2e" />
+      </linearGradient>
+      <radialGradient id="aiGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stopColor="#a855f7" stopOpacity="0.4" />
+        <stop offset="100%" stopColor="#a855f7" stopOpacity="0" />
+      </radialGradient>
+    </defs>
+    <rect width="64" height="64" rx="14" fill="url(#aiCmdBg)" />
+    <rect width="64" height="64" rx="14" fill="url(#aiGlow)" />
+    <circle cx="32" cy="32" r="5" fill="#a855f7" opacity="0.95" />
+    <circle cx="14" cy="20" r="3" fill="#06b6d4" opacity="0.9" />
+    <circle cx="50" cy="20" r="3" fill="#06b6d4" opacity="0.9" />
+    <circle cx="14" cy="44" r="3" fill="#06b6d4" opacity="0.9" />
+    <circle cx="50" cy="44" r="3" fill="#06b6d4" opacity="0.9" />
+    <circle cx="32" cy="10" r="2.5" fill="#ec4899" opacity="0.9" />
+    <circle cx="32" cy="54" r="2.5" fill="#ec4899" opacity="0.9" />
+    <line x1="32" y1="27" x2="14" y2="20" stroke="#a855f7" strokeWidth="1" opacity="0.6" />
+    <line x1="32" y1="27" x2="50" y2="20" stroke="#a855f7" strokeWidth="1" opacity="0.6" />
+    <line x1="32" y1="37" x2="14" y2="44" stroke="#a855f7" strokeWidth="1" opacity="0.6" />
+    <line x1="32" y1="37" x2="50" y2="44" stroke="#a855f7" strokeWidth="1" opacity="0.6" />
+    <line x1="32" y1="27" x2="32" y2="10" stroke="#06b6d4" strokeWidth="1" opacity="0.5" />
+    <line x1="32" y1="37" x2="32" y2="54" stroke="#06b6d4" strokeWidth="1" opacity="0.5" />
+    <line x1="14" y1="20" x2="14" y2="44" stroke="#06b6d4" strokeWidth="0.7" opacity="0.35" />
+    <line x1="50" y1="20" x2="50" y2="44" stroke="#06b6d4" strokeWidth="0.7" opacity="0.35" />
+    <circle cx="32" cy="32" r="10" stroke="#a855f7" strokeWidth="0.8" strokeDasharray="3 2" opacity="0.5" />
+  </svg>
+);

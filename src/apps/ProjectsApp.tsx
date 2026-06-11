@@ -22,6 +22,20 @@ interface ProjectDetails {
 
 const PROJECTS_DATA: ProjectDetails[] = [
   {
+    id: "multi-cloud",
+    title: "Multi-Cloud Infrastructure Automation Platform",
+    category: "Cloud / DevOps",
+    image: "/images/project-multi-cloud.png",
+    tech: ["AWS EKS", "Azure AKS", "Terraform", "Docker", "Kubernetes", "GitHub Actions", "Prometheus", "Grafana", "Python Flask"],
+    overview: "A production-grade multi-cloud platform that deploys a containerised application simultaneously on AWS and Azure, with full CI/CD automation and real-time observability across both clusters.",
+    problem: "Single-cloud architectures are a single point of failure — one provider outage means complete downtime. Manual deployments are slow, error-prone, and impossible to audit or replicate consistently across environments.",
+    solution: "Built end-to-end infrastructure as code using Terraform to provision both AWS EKS and Azure AKS clusters from a single codebase. Containerised the application with Docker, automated deployments via GitHub Actions CI/CD pipeline, and deployed to both clouds in parallel on every Git push.",
+    architecture: "Developer pushes code → GitHub Actions builds Docker image tagged with commit SHA → pushes to Docker Hub → deploys simultaneously to AWS EKS (ap-south-1) and Azure AKS (centralindia) via kubectl → Prometheus scrapes metrics from both clusters → Grafana visualises real-time dashboards. Remote state is stored in Azure Blob Storage.",
+    results: "Eliminated single point of failure across two independent cloud providers. End-to-end deployment in under 60 seconds from code push. Full infrastructure reproducible from scratch in under 15 minutes. Real-time observability across both clouds from unified Grafana dashboards. 100% infrastructure defined as code — auditable and version-controlled.",
+    lessons: "Cloud quota limits are a real constraint, not a tutorial problem — learned to debug live API errors and adapt architecture decisions on the fly. IaC changes how you think about infrastructure permanently. Observability should be added first, not last. Multi-cloud complexity compounds quickly — clean module structure in Terraform is not optional.",
+    githubUrl: "https://github.com/mirsshaad/Multi-Cloud-Platform"
+  },
+  {
     id: "trading-bot",
     title: "AI Trading Bot",
     category: "AI / ML",
@@ -99,7 +113,7 @@ const PROJECTS_DATA: ProjectDetails[] = [
 ];
 
 export default function ProjectsApp() {
-  const [selectedId, setSelectedId] = useState("trading-bot");
+  const [selectedId, setSelectedId] = useState("multi-cloud");
 
   const project = PROJECTS_DATA.find((p) => p.id === selectedId) || PROJECTS_DATA[0];
 
