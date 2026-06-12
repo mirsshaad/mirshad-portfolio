@@ -27,7 +27,12 @@ const PROJECTS_DATA: ProjectDetails[] = [
     title: "Multi-Cloud Infrastructure Automation Platform",
     category: "Cloud / DevOps",
     image: "/images/project-multi-cloud-grafana.png",
-    images: ["/images/project-multi-cloud-grafana.png", "/images/project-multi-cloud-actions.png"],
+    images: [
+      "/images/project-multi-cloud-grafana.png", 
+      "/images/project-multi-cloud-actions.png",
+      "/images/project-multi-cloud-autoscaling.png",
+      "/images/project-multi-cloud-failover.png"
+    ],
     tech: ["AWS EKS", "Azure AKS", "Terraform", "Docker", "Kubernetes", "GitHub Actions", "Prometheus", "Grafana", "Python Flask"],
     overview: "A production-grade multi-cloud platform that deploys a containerised application simultaneously on AWS and Azure, with full CI/CD automation and real-time observability across both clusters.",
     problem: "Single-cloud architectures are a single point of failure — one provider outage means complete downtime. Manual deployments are slow, error-prone, and impossible to audit or replicate consistently across environments.",

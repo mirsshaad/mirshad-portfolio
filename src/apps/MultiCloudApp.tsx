@@ -190,6 +190,38 @@ export default function MultiCloudApp() {
               </div>
             </div>
 
+            {/* Live Verification Proofs */}
+            <div className="flex flex-col gap-3.5 border-t border-white/5 pt-5">
+              <h3 className="text-xs font-bold text-zinc-200 uppercase tracking-wider flex items-center gap-1.5">
+                <ShieldCheck size={13} className="text-sky-400" /> Live Verification & Scaling Proofs
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex flex-col gap-2">
+                  <span className="text-[10px] text-zinc-500 font-semibold uppercase tracking-wider">Horizontal Pod Autoscaler (HPA) Scaling (1 → 5 → 1)</span>
+                  <div className="relative w-full h-[180px] rounded-xl overflow-hidden border border-white/5 bg-zinc-900 shadow-md">
+                    <Image 
+                      src="/images/project-multi-cloud-autoscaling.png"
+                      alt="HPA Autoscaling 1 to 5 to 1 pods"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <span className="text-[10px] text-zinc-500 font-semibold uppercase tracking-wider">Multi-Cloud Automated Failover & Disaster Recovery</span>
+                  <div className="relative w-full h-[180px] rounded-xl overflow-hidden border border-white/5 bg-zinc-900 shadow-md">
+                    <Image 
+                      src="/images/project-multi-cloud-failover.png"
+                      alt="Disaster recovery automated failover terminal"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Tech Stack Pills */}
             <div className="flex flex-col gap-2 border-t border-white/5 pt-4">
               <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">Tech Stack</span>
